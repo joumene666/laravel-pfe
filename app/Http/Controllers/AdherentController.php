@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdherentController extends Controller
@@ -13,7 +14,11 @@ class AdherentController extends Controller
      */
     public function index()
     {
-        return view('adherent.index');
+        $adherents = User::all();
+
+        return view('adherent.index', [
+            'adherents' => $adherents
+        ]);
     }
 
     /**
@@ -23,7 +28,7 @@ class AdherentController extends Controller
      */
     public function create()
     {
-        //
+        return view('adherent.create');
     }
 
     /**
@@ -34,7 +39,11 @@ class AdherentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            
+        ]));
     }
 
     /**

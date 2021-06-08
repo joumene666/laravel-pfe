@@ -18,7 +18,7 @@
                 </div>
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('adherent.index')" :active="request()->routeIs('adherent.index')">
+                    <x-nav-link :href="route('adherent.index')" :active="request()->routeIs('adherent.*')">
                         {{ __('Gestion des adhérents') }}
                     </x-nav-link>
                 </div>

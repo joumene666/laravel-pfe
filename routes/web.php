@@ -28,6 +28,8 @@ Route::get('/gestion-des-structures', [StructureController::class, 'index'])->mi
 
 Route::get('/profile', [AdherentController::class, 'show'])->middleware(['auth'])->name('adherent.show');
 
-Route::post('/adherant', [AdherentController::class, 'show'])->middleware(['auth'])->name('adherent.create');
+Route::post('/gestion-des-adhérents', [AdherentController::class, 'store'])->middleware(['auth'])->name('adherent.store');
+
+Route::get('/gestion-des-adhérents/créer', [AdherentController::class, 'create'])->middleware(['auth'])->name('adherent.create');
 
 require __DIR__.'/auth.php';
