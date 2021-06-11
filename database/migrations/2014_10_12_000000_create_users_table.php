@@ -25,19 +25,16 @@ class CreateUsersTable extends Migration
             $table->string('cin')->nullable();
             $table->string('phone')->nullable();
             $table->string('profession')->nullable();
-            $table->date('date_creation')->nullable();
+
             $table->date('birth_date')->nullable();
             $table->string('place_birth')->nullable();
             $table->string('nationality')->nullable();
             $table->string('code_commession')->nullable();
-            $table->string('delegation')->nullable();
-            $table->string('gouvernerat')->nullable();
-            $table->string('secteur')->nullable();
-            $table->foreignId('structer_id')->nullable();
+
+            $table->foreignId('structer_id')->nullable();  
             $table->string('observation')->nullable();
             $table->date('joinning_date')->nullable();
-            $table->string('type')->nullable();
-
+            $table->string('type_adherent')->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

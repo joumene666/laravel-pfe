@@ -14,16 +14,15 @@ class CreateStructersTable extends Migration
     public function up()
     {
         Schema::create('structers', function (Blueprint $table) {
-            $table->id();
 
+            $table->id();
             $table->string('code_structer');
             $table->date('date_creation');
-            $table->string('type');
-            $table->string('matricule-fiscale');
-            $table->string('jort-creation');
-            $table->string('num-compte-bancaire');
-            $table->integer('code-membre-bureau');
-            $table->string('nom-membre-bureau'); 
+            $table->string('type_structure');
+            $table->string('matricule_fiscale');
+            $table->string('jort_creation');
+            $table->string('num_compte_bancaire');
+            $table->foreignId('secteur_id')->nullable();
             $table->timestamps();
             
         });

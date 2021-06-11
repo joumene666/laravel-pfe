@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Structer extends Model
+class secteur extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    public $table = "secteur";
 }

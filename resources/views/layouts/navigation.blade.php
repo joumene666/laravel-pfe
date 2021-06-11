@@ -16,6 +16,7 @@
                         {{ __('Acceuil') }}
                     </x-nav-link>
                 </div>
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('adherent.index')" :active="request()->routeIs('adherent.*')">
@@ -24,7 +25,7 @@
                 </div>
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('structures.index')" :active="request()->routeIs('structures.index')">
+                    <x-nav-link :href="route('structures.index')" :active="request()->routeIs('structures.*')">
                         {{ __('Gestion des strutures') }}
                     </x-nav-link>
                 </div>

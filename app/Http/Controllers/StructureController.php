@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\gouvernerat;
+use App\Models\Structer;
 use Illuminate\Http\Request;
 
 class StructureController extends Controller
@@ -13,7 +15,10 @@ class StructureController extends Controller
      */
     public function index()
     {
-        //
+        $structers = Structer::all();
+        return view('structure.index', [
+            'structers' => $structers
+            ]);
     }
 
     /**
@@ -23,7 +28,12 @@ class StructureController extends Controller
      */
     public function create()
     {
-        //
+
+        $gouvernerats = gouvernerat::all();
+
+        return view('structure.create', [
+            'gouvernerats' => $gouvernerats
+        ]);
     }
 
     /**
@@ -34,7 +44,27 @@ class StructureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate(([
+        //     'date_creation' => 'required',
+        //     'type_structure' => 'required',
+        //     'matricule-fiscale' => 'required',
+        //     'jort-creation' => 'required',
+        //     'num-compte-bancaire' => 'required',
+        // ]));
+
+        // $structer = Structer::create([
+        //     'date_creation' => $request->firstname,
+        //     'type_structure' => $request->lastname,
+        //     'matricule-fiscale' => $request->profession,
+        //     'jort-creation' => $request->nationality,
+        //     'num-compte-bancaire' => $request->cin,
+        // ]);
+
+        // if ($structer){
+        //     return back()->with('success', 'Structure ajoutée avec succées');
+        // }else{
+        //     return back()->with('error', 'Il y aune erreur sil vous plais essayer plus tard');
+        // }
     }
 
     /**

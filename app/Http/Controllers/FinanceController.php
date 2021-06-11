@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Finance;
+
 class FinanceController extends Controller
 {
     /**
@@ -13,7 +15,11 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        //
+        $finances = Finance::all();
+
+        return view('finance.index', [
+            'finances' => $finances
+        ]);
     }
 
     /**
@@ -23,7 +29,7 @@ class FinanceController extends Controller
      */
     public function create()
     {
-        //
+        return view('finance.create');
     }
 
     /**
